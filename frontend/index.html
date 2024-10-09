@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio-Backend</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+</head>
+<body>
+    <div class="page">
+        <form action="" method="POST" class="formemail">
+            <div class="campoemail">
+                <h1>Formulário para Contato</h1>
+            </div>
+            <p>Digite os dados no campo abaixo.</p>
+            <label for="name">Nome</label>
+            <input type="text" placeholder="Digite seu nome" name="name" required/>
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="Digite seu e-mail" name="email" required/>
+            <label for="comment">Mensagem</label>
+            <textarea placeholder="Digite sua senha" name="comment"required></textarea>
+
+            <div class="g-recaptcha" data-sitekey="6Lejt1wqAAAAAF9fnkr8pOjVxuOG-yRv7qKBdoWX"></div>
+
+            <input type="submit" value="Enviar" id="Enviar" class="btn" />
+        </form>
+    </div>
+    
+</body>
+</html>
