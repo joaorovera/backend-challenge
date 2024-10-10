@@ -3,13 +3,12 @@ from flask import Flask
 from flask_mail import Mail
 from flask_cors import CORS
 from dotenv import load_dotenv
+from .routes import config_routes
 
-email = Mail()
 
 def create_app():
-    
-    CORS(app)
     app = Flask(__name__)
+    CORS(app)
     load_dotenv() #carregar variáveis de ambiente.
 
 
@@ -22,9 +21,8 @@ def create_app():
     app.config["MAIL_USE_TLS"] = not os.getenv("MAIL_SECURE").lower() == True
 
 
+    email = Mail(app)
 
-    Mail.init_app(app)
-
-    #aguardando a criação das rotas
+    config_routes(app)
 
     return app
