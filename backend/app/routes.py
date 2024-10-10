@@ -4,7 +4,7 @@ from flask import render_template
 def config_routes(app):
     @app.route("/ticket", methods=["POST"])
     def ticket_process():
-        return process_ticket
+        return process_ticket()
     
     @app.route("/")
     def home():
