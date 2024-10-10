@@ -1,7 +1,7 @@
-import os
-from flask_mail import Mail
 from flask_mailman import EmailMessage
+from flask_mail import Mail
 import re
+import os
 import requests
 
 email = Mail()
