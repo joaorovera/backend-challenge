@@ -13,7 +13,7 @@ def check_email(content):
 
 def check_name(content):
     name = content.get("name")
-    if len(name) >= 3:
+    if len(name) >= 2:
         return False
     return True
 
