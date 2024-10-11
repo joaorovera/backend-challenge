@@ -1,5 +1,6 @@
 from flask_mailman import EmailMessage
 from flask_mail import Mail
+import smtplib
 import re
 import os
 import requests
@@ -8,7 +9,7 @@ email = Mail()
 
 def check_email(content):
     standard = r"[^@]+@[^@]+\.[^@]+"
-    mail = content.get("mail")
+    mail = content.get("email")
     return not re.match(standard, mail)
 
 def check_name(content):
@@ -49,13 +50,16 @@ def valid_token(token):
 def send_email(content):
     msg = EmailMessage(
     subject= os.getenv("TEXT_MAIL_TITLE"),
-    body= os.getenv("TEXT_MAIL_BODY").format(name=content["name"], email=content["mail"], comment=content["comment"]),
+    body= os.getenv("TEXT_MAIL_BODY").format(name=content["name"], email=content["email"], comment=content["comment"]),
     sender= os.getenv("MAIL_AUTH_USER"),
     receivers = [os.getenv("MAIL_AUTH_USER")],
     )
     try:
-        msg.send()
+        with smtplib.SMTP(os.getenv("MAIL_HOST"), os.getenv("MAIL_PORT")) as server:
+            server.starttls()  
+            server.login(os.getenv("MAIL_AUTH_USER"), os.getenv("MAIL_AUTH_PASS"))
+            server.send_message(msg)
         return "Email enviado"
     except Exception as e:
-        print(e)
-        return True
+        print(f"Erro ao enviar e-mail: {e}")
+        return "Erro ao enviar email"
