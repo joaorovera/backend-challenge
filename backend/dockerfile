@@ -1,0 +1,23 @@
+FROM python:3.11-slim
+
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Copia os arquivos do projeto
+COPY . .
+
+# Instala as dependências
+RUN pip install -r requirements.txt
+
+# Define as variáveis de ambiente
+ENV PORT=5000
+ENV FLASK_APP=run.py
+ENV FLASK_ENV=production
+ENV SMTP_SERVER="smtp.gmail.com"
+ENV SMTP_PORT=587
+
+# Exponha a porta que o Flask irá rodar
+EXPOSE $PORT
+
+# Comando para iniciar a aplicação Flask
+CMD ["flask", "run", "--host=0.0.0.0"]

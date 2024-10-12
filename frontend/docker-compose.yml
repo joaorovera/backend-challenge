@@ -1,0 +1,7 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend  # Caminho para o diretório contendo o Dockerfile do frontend
+    ports:
+      - "80:80"

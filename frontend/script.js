@@ -1,7 +1,8 @@
 const button = document.getElementById("Enviar");
 
-function sendform(event) {
+function sendForm(event) {
     event.preventDefault();
+    console.log("Formulário enviado");
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -49,4 +50,4 @@ function sendform(event) {
 
 }
 
-button.addEventListener("click", sendform)
+button.addEventListener("click", sendForm)

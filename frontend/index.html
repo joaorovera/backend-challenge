@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio-Backend</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="stylesheet" href="style.css">
+    
 
 
 
 </head>
 <body>
     <div class="page">
-        <form id="contact-form" class="formemail" action="/ticket" method="POST">
+        <form id="contact-form" class="formemail" onsubmit="sendForm(event)">
             <div class="campoemail">
                 <h1>Formulário para Contato</h1>
             </div>
@@ -31,8 +30,10 @@
             <div id="error-message" style="color: rgb(168, 0, 0); display: none;"></div>
             <div id="success-message" style="color: rgb(9, 202, 9); display: none;"></div>
 
-            <input type="submit" value="Enviar" id="Enviar" class="btn" />
+            <button type="submit">Enviar</button>
         </form>
     </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
