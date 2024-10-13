@@ -49,13 +49,13 @@ def valid_token(token):
 
 def send_email(content):
     msg = EmailMessage(
-    subject= os.getenv("TEXT_MAIL_TITLE"),
-    body= os.getenv("TEXT_MAIL_BODY").format(name=content["name"], email=content["email"], comment=content["comment"]),
-    sender= os.getenv("MAIL_AUTH_USER"),
+    subject = os.getenv("TEXT_MAIL_TITLE"),
+    body = content['comment']
+    from_mail = os.getenv("MAIL_AUTH_USER"),
     receivers = [os.getenv("MAIL_AUTH_USER")],
     )
     try:
-        with smtplib.SMTP(os.getenv("MAIL_HOST"), os.getenv("MAIL_PORT")) as server:
+        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
             server.starttls()  
             server.login(os.getenv("MAIL_AUTH_USER"), os.getenv("MAIL_AUTH_PASS"))
             server.send_message(msg)

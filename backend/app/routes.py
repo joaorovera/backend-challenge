@@ -5,4 +5,8 @@ def config_routes(app):
     def ticket_process():
         return process_ticket()
 
+    @app.route("/teste")
+    def teste():
+        return "testando"
+
     

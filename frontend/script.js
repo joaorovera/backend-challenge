@@ -1,5 +1,9 @@
 const button = document.getElementById("Enviar");
 
+function teste(event) {
+    fetch('http://127.0.0.1:5000/teste',)
+}
+
 function sendForm(event) {
     event.preventDefault();
     console.log("Formulário enviado");
@@ -7,7 +11,7 @@ function sendForm(event) {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
-    const captcha = grecaptcha.getresponse();
+    const captcha = grecaptcha.getResponse();
 
     const dados={
         name:name,
@@ -16,15 +20,14 @@ function sendForm(event) {
         "g-recaptcha-response":captcha
     }
 
-    let cabecalho={
+
+    fetch('http://127.0.0.1:5000/ticket', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(dados)
-    }
-
-    fetch('http://localhost:5000/ticket', cabecalho)
+    })
 
     .then (response => {
         if (!response.ok) {
@@ -50,4 +53,4 @@ function sendForm(event) {
 
 }
 
-button.addEventListener("click", sendForm)
+button.addEventListener("click", teste)

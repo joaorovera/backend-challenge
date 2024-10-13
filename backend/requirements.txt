@@ -1,4 +1,4 @@
-Flask==2.2.2
+Flask==3.0.3
 Flask-CORS==3.0.10
 Flask-Mail==0.9.1 
 Flask-Mailman==1.1.1
