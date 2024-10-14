@@ -6,10 +6,10 @@ O desafio propõe a implementação de um microserviço de um formulário de con
 + [Objetivo](#objetivo)
 + [Estrutura do Projeto](#estrutura-do-projeto)
 + [Tecnologias Utilizadas](#tecnologias-utilizadas)
-+ [Como Rodar](#como-rodar-localmente)
++ [Como Rodar](#como-rodar)
 
 ## Objetivo
-Este projeto consiste em implementar um microserviço que irá gerenciar formulários de contato para a empresa e para o usuário. Sendo projeto para ser fácil de integrar
+Este projeto consiste em implementar um microserviço que irá gerenciar formulários de contato para a empresa e para o usuário. Sendo projetado para ser fácil de integrar
 
 ## Estrutura do Projeto
 
@@ -79,4 +79,5 @@ Você terá que rodar localmente o front e o backend separadamente, para isso:
     docker run -p 80:80 frontend
     ```
 4. Após isso, com os dois terminais já rodando nas portas epecificadas, acesse [localhost](http://localhost:80)
+
    Atenção: O Captcha funciona apenas em http://localhost:80.
