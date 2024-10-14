@@ -27,10 +27,13 @@ function sendForm(event) {
 
     .then (response => {
         if (!response.ok) {
-            const error = document.getElementById("error-message");
-            error.textContent = 'Ocorreu um erro ao enviar a mensagem.'
-            error.style.display = 'block'
-            document.getElementById('success-message').style.display = 'none'; 
+            return response.json().then(errorData => {
+                const error = document.getElementById("error-message");
+                error.textContent = errorData.detail || 'Ocorreu um erro ao enviar a mensagem.';
+                error.style.display = 'block'
+                document.getElementById('success-message').style.display = 'none'; 
+                throw new Error(data.detail || 'Ocorreu um erro ao enviar a mensagem.');
+            });
         }
         return response.json();
     })
@@ -41,6 +44,7 @@ function sendForm(event) {
         document.getElementById('error-message').style.display = 'none';
     })
     .catch(error => {
+        console.error('Erro:', error);
         const errorMessage = document.getElementById("error-message");
         errorMessage.textContent = 'Erro de conexão. Tente novamente mais tarde.';
         errorMessage.style.display = 'block';

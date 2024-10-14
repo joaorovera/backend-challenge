@@ -17,8 +17,10 @@ COPY . .
 ENV PORT=5000
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=production
-ENV SMTP_SERVER="smtp.gmail.com"
-ENV SMTP_PORT=465
+ENV MAIL_HOST="smtp.gmail.com"
+ENV MAIL_SECURE="true"
+ENV MAIL_PORT=465
+ENV RECAPTCHA_SECRET="6Lejt1wqAAAAAAmV7N7PEymep_sM0ZOOydDNPDWs"
 ENV RECAPTCHA_URL="https://www.google.com/recaptcha/api/siteverify"
 ENV ORIGINS="http://localhost:5000"
 ENV MAIL_AUTH_USER="joaorovera73@gmail.com"
