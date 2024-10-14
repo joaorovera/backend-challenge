@@ -49,7 +49,7 @@ def send_email(content):
     try:
         msg = EmailMessage(
             subject=os.getenv("TEXT_MAIL_TITLE"),
-            body=os.getenv("TEXT_MAIL_BODY").format(comment=content["comment"]),
+            body=os.getenv("TEXT_MAIL_BODY").format(email=content["email"], comment=content["comment"]),
             from_email=os.getenv("MAIL_AUTH_USER"),
             to=[os.getenv("MAIL_AUTH_USER")])
 
