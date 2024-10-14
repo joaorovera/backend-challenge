@@ -53,4 +53,4 @@ function sendForm(event) {
 
 }
 
-button.addEventListener("click", teste)
+button.addEventListener("click", sendForm)
