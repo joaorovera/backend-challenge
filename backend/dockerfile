@@ -18,8 +18,15 @@ ENV PORT=5000
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=production
 ENV SMTP_SERVER="smtp.gmail.com"
-ENV SMTP_PORT=587
+ENV SMTP_PORT=465
+ENV RECAPTCHA_URL="https://www.google.com/recaptcha/api/siteverify"
 ENV ORIGINS="http://localhost:5000"
+ENV MAIL_AUTH_USER="joaorovera73@gmail.com"
+ENV MAIL_AUTH_PASS="axju idyp dexx swhu"
+ENV TEXT_MAIL_TITLE="Formulário de Contato"
+ENV DESTINY="{email}"
+ENV TEXT_MAIL_BODY="E-mail de: {email} Assunto: {comment}"
+ENV TEXT_MAIL_HTML="Assunto: {comment}"
 
 # Exponha a porta que o Flask irá rodar
 EXPOSE $PORT
