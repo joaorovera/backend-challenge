@@ -22,8 +22,10 @@ body {
 
 .campoemail {
     font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 22px;
     display: flex;
-    color: #38B6FF;
+    color: #11374d;
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -34,10 +36,10 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #ffffffef;
-    border-radius: 7px;
-    padding: 110px;
+    border-radius: 10px;
+    padding: 100px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 5px;
+    gap: 15px;
     margin-top: 100px
 }
 
@@ -52,15 +54,14 @@ body {
     display: inline-block;
     font-size: 14px;
     color: #666;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .formemail input {
-    padding: 15px;
+    padding: 20px;
     font-size: 14px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
-    margin-top: 5px;
     border-radius: 4px;
     transition: all linear 160ms;
     outline: none;
@@ -68,7 +69,7 @@ body {
 
 
 .formemail input:focus {
-    border: 1px solid #38B6FF;
+    border: 1px solid #000000;
 }
 
 .formemail label {
@@ -76,20 +77,18 @@ body {
     font-weight: 600;
 }
 
-.formemail a {
-    display: inline-block;
+.formemail textarea {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
     margin-bottom: 20px;
-    font-size: 13px;
-    color: #545454;
+    border-radius: 4px;
     transition: all linear 160ms;
-}
-
-.formemail a:hover {
-    color: #545454;
+    outline: none;
 }
 
 .btn {
-    background-color: #38B6FF;
+    background-color: #0d2a3b;
     color: #fff;
     font-size: 14px;
     font-weight: 600;
@@ -102,6 +101,6 @@ body {
 
 .btn:hover {
     transform: scale(1.05);
-    background-color: #38B6FF;
+    background-color: #0d2a3b;
 
 }

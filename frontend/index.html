@@ -20,17 +20,17 @@
             <p>Digite os dados no campo abaixo.</p>
             <label for="name">Nome</label>
             <input type="text" id="name" name="name" placeholder="Digite seu nome" required/>
-            <label for="message">Mensagem</label>
-            <textarea id="message" name="message" placeholder="Digite sua mensagem"required></textarea>
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required/>
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" placeholder="Digite sua mensagem"required></textarea>
 
             <div class="g-recaptcha" data-sitekey="6Lejt1wqAAAAAF9fnkr8pOjVxuOG-yRv7qKBdoWX"></div>
 
             <div id="error-message" style="color: rgb(168, 0, 0); display: none;"></div>
             <div id="success-message" style="color: rgb(9, 202, 9); display: none;"></div>
 
-            <button type="submit" id="Enviar">Enviar</button>
+            <input type="submit" value="Enviar" id="Enviar" class="btn" />
         </form>
     </div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
