@@ -87,3 +87,4 @@ Você terá que rodar localmente o front e o backend separadamente, para isso:
 ## API
 
 Se você quiser ver apenas a api, o arquivo API.yaml tem toda a documentação, de como deve responder e o que espera receber de parametros. Além disso o conteudo pode ser usado em um editor swagger.
+Pode ser acessado através do link http://localhost:5000/docs.
