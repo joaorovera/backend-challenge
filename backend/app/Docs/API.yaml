@@ -18,31 +18,32 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Ticket'
+              
       responses:
         '201':
           description: "Ticket foi enviado com sucesso"
           content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Ticket'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
         '400':
           description: "A requisição não foi enviada (Bad request)"
           content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Error'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '401':
           description: "Captcha não verificado, ou inválido"
           content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Error'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '500':
           description: "Servidor com erro interno"
           content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Error'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
 components:
   schemas:
