@@ -51,9 +51,6 @@ backend-challenge/
     </tr>
 </table>
 
-## API
-
-Se você quiser ver apenas a api, o arquivo API.yaml tem toda a documentação, de como deve responder e o que espera receber de parametros. Além disso o conteudo pode ser usado em um editor swagger.
 
 ## Como Rodar
 Você terá que rodar localmente o front e o backend separadamente, para isso:
@@ -86,3 +83,7 @@ Você terá que rodar localmente o front e o backend separadamente, para isso:
 4. Após isso, com os dois terminais já rodando nas portas epecificadas, acesse [localhost](http://localhost:80)
 
    Atenção: O Captcha funciona apenas em http://localhost:80.
+
+## API
+
+Se você quiser ver apenas a api, o arquivo API.yaml tem toda a documentação, de como deve responder e o que espera receber de parametros. Além disso o conteudo pode ser usado em um editor swagger.
