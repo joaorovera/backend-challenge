@@ -1,19 +1,18 @@
 FROM python:3.11-slim
 
-# Define o diretório de trabalho
 WORKDIR /app
 
-# Copie o arquivo requirements.txt para o contêiner
+# O docker copia o arquivo requirements.txt para o contêiner
 COPY requirements.txt .
 
 # Instala as dependências
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia os arquivos do projeto
+# O docker copia os arquivos do projeto
 COPY . .
 
-# Define as variáveis de ambiente
+# O docker define as variáveis de ambiente
 ENV PORT=5000
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=production
@@ -30,7 +29,7 @@ ENV DESTINY="{email}"
 ENV TEXT_MAIL_BODY="E-mail de: {email} Assunto: {comment}"
 ENV TEXT_MAIL_HTML="Assunto: {comment}"
 
-# Exponha a porta que o Flask irá rodar
+# Porta que o Flask irá rodar
 EXPOSE $PORT
 
 # Comando para iniciar a aplicação Flask
