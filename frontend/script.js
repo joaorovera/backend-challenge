@@ -46,7 +46,7 @@ function sendForm(event) {
     .catch(error => {
         console.error('Erro:', error);
         const errorMessage = document.getElementById("error-message");
-        errorMessage.textContent = 'Erro de conexão. Tente novamente mais tarde.';
+        errorMessage.textContent = 'Ocorreu um erro ao enviar a mensagem.';
         errorMessage.style.display = 'block';
         document.getElementById('success-message').style.display = 'none';
     });
