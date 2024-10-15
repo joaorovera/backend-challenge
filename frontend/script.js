@@ -2,7 +2,6 @@ const button = document.getElementById("Enviar");
 
 function sendForm(event) {
     event.preventDefault();
-    console.log("Formulário enviado");
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -28,11 +27,11 @@ function sendForm(event) {
     .then (response => {
         if (!response.ok) {
             return response.json().then(errorData => {
-                const error = document.getElementById("error-message");
-                error.textContent = errorData.detail || 'Ocorreu um erro ao enviar a mensagem.';
-                error.style.display = 'block'
+                const errorM = document.getElementById("errorM");
+                errorM.textContent = errorData.detail || 'Ocorreu um erro ao enviar a mensagem.';
+                errorM.style.display = 'block'
                 document.getElementById('success-message').style.display = 'none'; 
-                throw new Error(data.detail || 'Ocorreu um erro ao enviar a mensagem.');
+                throw new Error(errorData.detail || 'Ocorreu um erro ao enviar a mensagem.');
             });
         }
         return response.json();
@@ -45,9 +44,9 @@ function sendForm(event) {
     })
     .catch(error => {
         console.error('Erro:', error);
-        const errorMessage = document.getElementById("error-message");
-        errorMessage.textContent = 'Ocorreu um erro ao enviar a mensagem.';
-        errorMessage.style.display = 'block';
+        const errorM = document.getElementById("errorM");
+        errorM.textContent = 'Erro de sistema, tente novamente mais tarde.';
+        errorM.style.display = 'block';
         document.getElementById('success-message').style.display = 'none';
     });
 
