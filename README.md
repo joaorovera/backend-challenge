@@ -6,6 +6,7 @@ O desafio propõe a implementação de um microserviço de um formulário de con
 + [Objetivo](#objetivo)
 + [Estrutura do Projeto](#estrutura-do-projeto)
 + [Tecnologias Utilizadas](#tecnologias-utilizadas)
++ [API](#API)
 + [Como Rodar](#como-rodar)
 
 ## Objetivo
@@ -49,6 +50,10 @@ backend-challenge/
         <td>Outras</td>
     </tr>
 </table>
+
+## API
+
+Se você quiser ver apenas a api, o arquivo API.yaml tem toda a documentação, de como deve responder e o que espera receber de parametros. Além disso o conteudo pode ser usado em um editor swagger.
 
 ## Como Rodar
 Você terá que rodar localmente o front e o backend separadamente, para isso:
