@@ -1,0 +1,82 @@
+openapi: 3.0.0
+info:
+  title: TicketSupport-API
+  description: API para gerenciar tickets de suporte
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:5000
+    description: Servidor Local
+
+paths:
+  /ticket:
+    post:
+      summary: Cria um novo ticket de suporte com as informações enviadas
+      description: O usuário fez um envio de um ticket de suporte direcionado a empresa
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+      responses:
+        '201':
+          description: "Ticket foi enviado com sucesso"
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+        '400':
+          description: "A requisição não foi enviada (Bad request)"
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Error'
+        '401':
+          description: "Captcha não verificado, ou inválido"
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Error'
+        '500':
+          description: "Servidor com erro interno"
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Ticket:
+      type: object
+      properties:
+        name:
+          type: String
+          description: Nome do usuário
+        email:
+          type: String
+          description: Email do usuário
+        comment:
+          type: String
+          description: Mensagem a ser enviada pelo usuário
+        g-recaptcha-response:
+          type: String
+          description: Token que será validado pela API de captcha do google.
+    Error:
+      type: object
+      properties:
+        type:
+          type: string
+          description: URL com mais informações sobre o erro.
+          example: "about:blank"
+        title:
+          type: string
+          description: Tipo de erro.
+          example: "400 Bad Request"
+        detail:
+          type: string
+          description: Detalhes do erro.
+          example: "O email é inválido ou está vazio."
+        instance:
+          type: string
+          description: Endpoint que gerou o erro.
+          example: "/ticket"
